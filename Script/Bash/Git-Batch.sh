@@ -7,8 +7,8 @@ fi
 dir="$1"
 
 if [ ! -d "$dir" ]; then
-  echo "Directory does not exist."
-  exit 1
+    echo "Directory does not exist."
+    exit 1
 fi
 
 cd "$dir"
@@ -20,11 +20,22 @@ for subdir in ./*; do
 done
 
 function function1() {
+    while true; do
+        echo -e "\e[1;34mYour Command:\e[0m"
+        read -p "> " command
+        if [[ $command == "git "* ]]; then
+            break
+        else
+            echo -e "\e[1;31mFormat error, try again.\e[0m"
+        fi
+    done
+    command=${command:4}
     for repo in ${repos[@]}; do
         echo -e "\e[1;33m$repo\e[0m"
-        git -C "$repo" remote -v
+        git -C "$repo" $command
     done
 }
+
 function function2() {
     echo "Example: git@gitlab.com:senzyo_sama"
     echo "         https://gitlab.com/senzyo_sama"
@@ -48,6 +59,7 @@ function function2() {
         git -C "$repo" remote -v
     done
 }
+
 function function3() {
     echo "Example: git@gitlab.com:senzyo_sama"
     echo "         https://gitlab.com/senzyo_sama"
@@ -72,7 +84,7 @@ function function3() {
 }
 
 options=(
-    "git remote -v"
+    "Input Command"
     "git remote set-url --add origin <newurl>"
     "git remote set-url --delete origin <oldurl>"
     "Quit"
@@ -83,7 +95,7 @@ while true; do
     for i in ${!options[@]}; do
         echo "[$((i + 1))] ${options[$i]}"
     done
-    echo -e "\e[1;34mYour choice:\e[0m"
+    echo -e "\e[1;34mYour Choice:\e[0m"
     read -p "> " choice
     case $choice in
     1)
