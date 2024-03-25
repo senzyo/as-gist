@@ -13,7 +13,6 @@ if [ ! -d "$dir" ]; then
 fi
 
 if [ -d "$dir/.git" ]; then
-  branch=$(git -C "$dir" branch -r | awk -F/ '{print $NF}')
   remote=$(git -C "$dir" remote -v | grep "(fetch)" | awk '{print $2}')
   rm -rf "$dir/.git"
 else
