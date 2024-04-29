@@ -1,0 +1,35 @@
+# NAME: download_process
+# AUTHOR: SenZyo
+# Source: https://raw.githubusercontent.com/senzyo/as-gist/master/Rule/Clash/download_process.yaml
+# UPDATED: 2024-04-28
+# PROCESS-NAME: 28
+
+payload:
+  - PROCESS-NAME,aria2c
+  - PROCESS-NAME,aria2c.exe
+  - PROCESS-NAME,BitComet
+  - PROCESS-NAME,BitComet.exe
+  - PROCESS-NAME,BitComet_x64.exe
+  - PROCESS-NAME,deluged
+  - PROCESS-NAME,deluge.exe
+  - PROCESS-NAME,fdm
+  - PROCESS-NAME,fdm.exe
+  - PROCESS-NAME,Folx
+  - PROCESS-NAME,Folx.exe
+  - PROCESS-NAME,IDMan.exe
+  - PROCESS-NAME,motrix
+  - PROCESS-NAME,Motrix.exe
+  - PROCESS-NAME,NetTransport
+  - PROCESS-NAME,NetTransport.exe
+  - PROCESS-NAME,qbittorrent
+  - PROCESS-NAME,qbittorrent.exe
+  - PROCESS-NAME,Transmission
+  - PROCESS-NAME,Transmission.exe
+  - PROCESS-NAME,uTorrent
+  - PROCESS-NAME,uTorrent.exe
+  - PROCESS-NAME,WebTorrent
+  - PROCESS-NAME,WebTorrent.exe
+  - PROCESS-NAME,WebTorrentHelper
+  - PROCESS-NAME,WebTorrentHelper.exe
+  - PROCESS-NAME,xdown
+  - PROCESS-NAME,xdown.exe
