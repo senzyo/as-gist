@@ -28,5 +28,7 @@
 │           └── B2A.py
 └── Website
     ├── FreeVideoAPI        # 几个尚且能用的解析国内 VIP 视频的 API
-    └── SiteBuilding.html   # “网站正在建设”页面
+    ├── SiteBuilding.html   # “网站正在建设”页面
+    └── SiteProxy
+        └── worker.js       # 代理任何网站, https://senzyo.net/2024-6/
 ```
