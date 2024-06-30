@@ -16,8 +16,8 @@ if (Test-Path "$dir\.git") {
   Remove-Item "$dir\.git" -Recurse -Force
 } else {
   while ($true) {
-    Write-Host "Example: git@github.com:senzyo_sama/blog.git"
-    Write-Host "         https://github.com/senzyo_sama/blog.git"
+    Write-Host "Example: git@github.com:senzyo/blog.git"
+    Write-Host "         https://github.com/senzyo/blog.git"
     $remote = Read-Host "Input remote origin address: "
     if ($remote -match '\.git$') {
       break

@@ -17,8 +17,8 @@ if [ -d "$dir/.git" ]; then
   rm -rf "$dir/.git"
 else
   while true; do
-    echo "Example: git@github.com:senzyo_sama/blog.git"
-    echo "         https://github.com/senzyo_sama/blog.git"
+    echo "Example: git@github.com:senzyo/blog.git"
+    echo "         https://github.com/senzyo/blog.git"
     echo -e "\e[1;34mInput remote origin address:\e[0m"
     read -p "> " remote
     if [[ $remote =~ \.git$ ]]; then

@@ -37,8 +37,8 @@ function function1() {
 }
 
 function function2() {
-    echo "Example: git@gitlab.com:senzyo_sama"
-    echo "         https://gitlab.com/senzyo_sama"
+    echo "Example: git@github.com:senzyo"
+    echo "         https://github.com/senzyo"
     echo -e "\e[1;34mYour Input:\e[0m"
     read -p "> " host
     for repo in ${repos[@]}; do
@@ -61,8 +61,8 @@ function function2() {
 }
 
 function function3() {
-    echo "Example: git@gitlab.com:senzyo_sama"
-    echo "         https://gitlab.com/senzyo_sama"
+    echo "Example: git@github.com:senzyo"
+    echo "         https://github.com/senzyo"
     echo -e "\e[1;34mYour Input:\e[0m"
     read -p "> " host
     for repo in ${repos[@]}; do
