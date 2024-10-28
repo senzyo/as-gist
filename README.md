@@ -15,6 +15,7 @@
 │   │   ├── Git-Reinitialize.sh     # 重新初始化 Git 仓库
 │   │   ├── Output-Recursively.sh   # 递归输出文件夹名称和文件路径到指定文件
 │   ├── CMD
+│   │   ├── IAS.cmd                 # https://github.com/WindowsAddict/IDM-Activation-Script
 │   │   └── MAS_AIO.cmd             # https://github.com/massgravel/Microsoft-Activation-Scripts/
 │   ├── JavaScript
 │   │   └── XiaomiCloudNotes        # 从网页版的小米便签中导出所有数据, https://www.zhihu.com/question/35329107/answer/2726573615
