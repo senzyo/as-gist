@@ -1,0 +1,40 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "process_name": [
+        "aria2c",
+        "aria2c.exe",
+        "BitComet",
+        "BitComet.exe",
+        "BitComet_x64.exe",
+        "deluged",
+        "deluge.exe",
+        "fdm",
+        "fdm.exe",
+        "Folx",
+        "Folx.exe",
+        "IDMan.exe",
+        "motrix",
+        "Motrix.exe",
+        "NetTransport",
+        "NetTransport.exe",
+        "qbittorrent",
+        "qbittorrent.exe",
+        "Transmission",
+        "Transmission.exe",
+        "transmission-daemon",
+        "transmission-gtk",
+        "transmission-qt",
+        "uTorrent",
+        "uTorrent.exe",
+        "WebTorrent",
+        "WebTorrent.exe",
+        "WebTorrentHelper",
+        "WebTorrentHelper.exe",
+        "xdown",
+        "xdown.exe"
+      ]
+    }
+  ]
+}
