@@ -1,0 +1,4 @@
+Script/CMD/** text eol=crlf
+Script/PowerShell/** text eol=crlf
+
+Script/Bash/** text eol=lf
