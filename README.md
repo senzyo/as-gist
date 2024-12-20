@@ -16,7 +16,8 @@
 │   │   ├── Output-Recursively.sh   # 递归输出文件夹名称和文件路径到指定文件
 │   ├── CMD
 │   │   ├── IAS.cmd                 # https://github.com/WindowsAddict/IDM-Activation-Script
-│   │   └── MAS_AIO.cmd             # https://github.com/massgravel/Microsoft-Activation-Scripts/
+│   │   ├── MAS_AIO.cmd             # https://github.com/massgravel/Microsoft-Activation-Scripts/
+│   │   └── Refresh-Windows-Icon.cmd    # 刷新 Windows 系统缩略图缓存
 │   ├── JavaScript
 │   │   └── XiaomiCloudNotes        # 从网页版的小米便签中导出所有数据, https://www.zhihu.com/question/35329107/answer/2726573615
 │   │       ├── ExtractData.js
