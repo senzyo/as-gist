@@ -1,26 +1,35 @@
 @echo off
 
+@REM 检查权限
+>nul 2>&1 "%SYSTEMROOT%\system32\cacls.exe" "%SYSTEMROOT%\system32\config\system"
+if '%errorlevel%' NEQ '0' (
+    echo 请以管理员身份运行此脚本！
+    pause
+    exit /b
+)
+
+echo 正在结束 Explorer 进程...
 taskkill /f /im explorer.exe
+timeout /t 2 /nobreak >nul
 
-@REM 清理系统图标缓存数据库
+echo 正在清理图标缓存...
+@REM 清理旧式缓存
+attrib -h -s -r "%LocalAppData%\IconCache.db" >nul 2>&1
+del /f /q "%LocalAppData%\IconCache.db" >nul 2>&1
 
-attrib -h -s -r "%UserProfile%\AppData\Local\IconCache.db"
+@REM 清理图标和缩略图缓存
+attrib -h -s -r "%LocalAppData%\Microsoft\Windows\Explorer\*" >nul 2>&1
+del /f /q "%LocalAppData%\Microsoft\Windows\Explorer\iconcache_*.db" >nul 2>&1
+del /f /q "%LocalAppData%\Microsoft\Windows\Explorer\thumbcache_*.db" >nul 2>&1
 
-del /f/q "%UserProfile%\AppData\Local\IconCache.db"
+@REM 清理托盘的图标缓存
+reg delete "HKEY_CLASSES_ROOT\Local Settings\Software\Microsoft\Windows\CurrentVersion\TrayNotify" /v IconStreams /f >nul 2>&1
+reg delete "HKEY_CLASSES_ROOT\Local Settings\Software\Microsoft\Windows\CurrentVersion\TrayNotify" /v PastIconsStream /f >nul 2>&1
 
-attrib /s /d -h -s -r "%UserProfile%\AppData\Local\Microsoft\Windows\Explorer\*"
+@REM 清理“搜索”的图标缓存
+del /f /s /q "%LocalAppData%\Packages\Microsoft.Windows.Search_cw5n1h2txyewy\LocalState\AppIconCache\*.*" >nul 2>&1
 
-del /f/q "%UserProfile%\AppData\Local\Microsoft\Windows\Explorer\thumbcache_32.db"
-del /f/q "%UserProfile%\AppData\Local\Microsoft\Windows\Explorer\thumbcache_96.db"
-del /f/q "%UserProfile%\AppData\Local\Microsoft\Windows\Explorer\thumbcache_102.db"
-del /f/q "%UserProfile%\AppData\Local\Microsoft\Windows\Explorer\thumbcache_256.db"
-del /f/q "%UserProfile%\AppData\Local\Microsoft\Windows\Explorer\thumbcache_1024.db"
-del /f/q "%UserProfile%\AppData\Local\Microsoft\Windows\Explorer\thumbcache_idx.db"
-del /f/q "%UserProfile%\AppData\Local\Microsoft\Windows\Explorer\thumbcache_sr.db"
+echo 正在重启 Explorer...
+start explorer.exe
 
-@REM 清理系统托盘记忆的图标
-
-echo y | reg delete "HKEY_CLASSES_ROOT\Local Settings\Software\Microsoft\Windows\CurrentVersion\TrayNotify" /v IconStreams
-echo y | reg delete "HKEY_CLASSES_ROOT\Local Settings\Software\Microsoft\Windows\CurrentVersion\TrayNotify" /v PastIconsStream
-
-start explorer
+pause
