@@ -1,3 +1,14 @@
+$ESC = [char]27
+$Black = "$ESC[90m"
+$Red = "$ESC[91m"       # [Error]
+$Green = "$ESC[92m"     # [Success]
+$Yellow = "$ESC[93m"    # [Warning]
+$Blue = "$ESC[94m"
+$Magenta = "$ESC[95m"
+$Cyan = "$ESC[96m"      # [Notice]
+$White = "$ESC[97m"
+$NC = "$ESC[0m"         # No Color
+
 $filePath = "$env:LocalAppData\Microsoft\Edge\User Data\Local State"
 $tempPath = "$env:LocalAppData\Microsoft\Edge\User Data\Local State.tmp"
 
@@ -23,17 +34,17 @@ if (Test-Path $filePath) {
         if ($LASTEXITCODE -eq 0 -and $jsonResult) {
             [System.IO.File]::WriteAllLines($tempPath, $jsonResult)
             Move-Item -Path "$tempPath" -Destination "$filePath" -Force
-            Write-Host "Success: Specified items have been updated to 'US'." -ForegroundColor Green
+            Write-Host "${Green}[Success]${NC} Updated to 'US'."
             Start-Process "msedge.exe"
         } else {
-            Write-Host "Required keys missing or array too short. No changes made." -ForegroundColor Red
+            Write-Host "${Red}[Error]${NC} Required keys missing or array too short. No changes made."
             pause
         }
     } catch {
-        Write-Host "An error occurred during jq processing." -ForegroundColor Red
+        Write-Host "${Red}[Error]${NC} An error occurred during jq processing."
         pause
     }
 } else {
-    Write-Host "Error: File not found at $filePath" -ForegroundColor Red
+    Write-Host "${Red}[Error]${NC} File not found: $filePath"
     pause
 }
