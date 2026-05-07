@@ -7,16 +7,17 @@
 ├── README.md
 ├── Rule
 │   ├── Clash
-│   │   └──downloader.yaml              # 用于 Clash 的下载器进程分流规则
-│   └── sing-box
-│       ├── downloader.json             # 用于 sing-box 的下载器进程分流规则
-│       └── downloader.srs
+│   │   └── downloader.yaml             # 用于 Clash 的下载器进程分流规则
+│   └── sing-box                        # 用于 sing-box 的下载器进程分流规则
+│       ├── downloader.json
+│       └── downloader.srs
 ├── Script
 │   ├── Bash
 │   │   ├── Aria2-UpdateTracker.sh      # 更新 BT Tracker 地址到 aria2.conf 中
 │   │   ├── Git-Reinitialize.sh         # 重新初始化 Git 仓库
 │   │   └── Output-Recursively.sh       # 递归输出文件夹名称和文件路径到指定文件
 │   ├── CMD
+│   │   ├── MAS_AIO.cmd.txt             # 激活 Windows 和 Office, https://github.com/massgravel/Microsoft-Activation-Scripts
 │   │   └── Refresh-Windows-Icon.cmd    # 刷新 Windows 系统缩略图缓存
 │   ├── PowerShell
 │   │   ├── Change-Edge-Region.ps1      # 修改 Edge 浏览器的地区以使用 Copilot
