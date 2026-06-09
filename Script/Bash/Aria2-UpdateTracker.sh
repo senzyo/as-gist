@@ -16,7 +16,7 @@ fi
 
 tracker="bt-tracker="
 tracker+=$(
-	curl -fsSL https://gh-proxy.org/https://raw.githubusercontent.com/XIU2/TrackersListCollection/master/all_aria2.txt ||
+	curl -fsSL https://gh-proxy.com/https://raw.githubusercontent.com/XIU2/TrackersListCollection/master/all_aria2.txt ||
 		curl -fsSL https://fastly.jsdelivr.net/gh/XIU2/TrackersListCollection@master/all_aria2.txt ||
 		curl -fsSL https://gcore.jsdelivr.net/gh/XIU2/TrackersListCollection@master/all_aria2.txt ||
 		curl -fsSL https://testingcf.jsdelivr.net/gh/XIU2/TrackersListCollection@master/all_aria2.txt
